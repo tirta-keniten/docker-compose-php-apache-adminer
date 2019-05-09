@@ -1,55 +1,34 @@
-# docker-php7-lamp
-Docker example with Apache, Mysql, PhpMyAdmin and Php
+# docker-compose - php - apache - adminer
+
+Originally from: https://github.com/johnnywang1994/docker-php7-lamp
+
+I changed PHPMyAdmin with Adminer because it's light-weight database managing tool.
+
+## In the box
+
+* PHP 7.3 & Apache
+* MySQL
+* Adminer
 
 ## Usage
 
-1. Open in background
+1. Clone this repo to folder ``my_app``
+2. Go to folder ``my_app``
+3. Run & build
 
 ```
-docker-compose up -d
+git clone git@github.com:tirta-keniten/docker-php7-lamp.git my_app/
+
+cd my_app
+
+docker-compose up
 ```
 
-2. Open apache at http://localhost:8081, And you should see "It Works!" in page.
+## URL
 
-3. Open phpmyadmin at http://localhost:8887, Enter for Account: "root" & Password: "test".
+1. Web Server: http://localhost:8081/
+2. Adminer: http://localhost:18081/
 
+## Next features
 
-## Default Settings
-
-- **web**
-
-  name: "php-apache-web"
-
-  version: 7.3
-
-  rewriteEngine: On
-
-  folder: "htdocs"
-
-  port: 8081
-
-- **phpmyadmin**
-
-  name: "php-apache-admin"
-
-  version: latest
-
-  user: "root"
-
-  password: "test"
-
-  port: 8887
-
-- **mysql**
-
-  name: "php-apache-mysql"
-
-  version: latest
-
-  user: "root"
-
-  password: "test"
-
-  folder: "mysql"
-
-  port: 3306
+* Apache virtual host

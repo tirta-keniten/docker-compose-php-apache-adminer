@@ -3,7 +3,6 @@ services:
   web:
     build: .
     container_name: php-apache-web
-    restart: always
     ports:
       - 8081:80
     volumes:
@@ -11,8 +10,7 @@ services:
     depends_on:
       - db
   db:
-    image: mysql:latest
-    restart: always
+    image: mysql:5.7
     container_name: php-apache-mysql
     ports: 
       - 33060:3306
@@ -25,7 +23,6 @@ services:
       MYSQL_ROOT_PASSWORD: 'root'
   adminer:
     image: adminer
-    restart: always
     container_name: php-adminer
     depends_on:
       - db
